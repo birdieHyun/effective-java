@@ -13,6 +13,7 @@ public class ChatRoom {
     private List<WeakReference<User>> users; // 이건 올바른 방법이 아님
 
     public ChatRoom() {
+        // 이런게 Strong Reference
         this.users = new ArrayList<>();
     }
 
