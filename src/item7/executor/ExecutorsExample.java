@@ -23,8 +23,9 @@ public class ExecutorsExample {
         // 그러나 스레드는 CPU의 갯수보다 많이 생성할 수 없음
         int numberOfCpu = Runtime.getRuntime().availableProcessors();
 
-        ExecutorService executorService = Executors.newFixedThreadPool(
-            numberOfCpu); // blocking queue 사용 , concurrent 하게 접근할 수 있음
+        // blocking queue 사용 , concurrent 하게 접근할 수 있음
+        ExecutorService executorService = Executors.newFixedThreadPool(numberOfCpu);
+
         for (int i = 0; i < 100; i++) {
             executorService.submit(new Task());
         }

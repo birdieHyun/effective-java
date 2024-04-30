@@ -21,11 +21,11 @@ class PostRepositoryTest {
 
         //-----------------------------
         // 이렇게 하면 weak reference를 쓰더라도 cacheKey가 참조되고 있기 때문에 GC되지 않음
-        CacheKey cacheKey = new CacheKey(2); // 그런데 cacheKey를 나중에 null 처리 할 경우! GC됨!!
-        postRepository.getPostById2(cacheKey);
-
+//        CacheKey cacheKey = new CacheKey(2); // 그런데 cacheKey를 나중에 null 처리 할 경우! GC됨!!
+//        postRepository.getPostById2(cacheKey);
         // 그러나 이렇게 할 경우 CacheKey가 참조되는 곳이 없기 때문에 GC됨
-//        postRepository.getPostById2(new CacheKey(2));
+        postRepository.getPostById2(new CacheKey(2));
+
         System.out.println(postRepository.getCache().size());
 
 
