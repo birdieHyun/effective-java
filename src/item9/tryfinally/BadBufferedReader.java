@@ -8,10 +8,6 @@ import java.io.StreamCorruptedException;
 
 public class BadBufferedReader extends BufferedReader {
 
-    public BadBufferedReader(Reader in, int sz) {
-        super(in, sz);
-    }
-
     public BadBufferedReader(Reader in) {
         super(in);
     }
